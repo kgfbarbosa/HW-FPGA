@@ -1,0 +1,103 @@
+|example3
+s0 <= half_adder:inst2.Sum
+a0 => half_adder:inst2.A
+b0 => half_adder:inst2.B
+s1 <= full_adder:inst.Sum
+a1 => full_adder:inst.A
+b1 => full_adder:inst.B
+s2 <= full_adder:inst4.Sum
+a2 => full_adder:inst4.A
+b2 => full_adder:inst4.B
+s3 <= full_adder:inst3.Sum
+a3 => full_adder:inst3.A
+b3 => full_adder:inst3.B
+cout <= full_adder:inst3.Cout
+
+
+|example3|half_adder:inst2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst|half_adder:HA1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst|half_adder:HA2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst4
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst4|half_adder:HA1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst4|half_adder:HA2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst3
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst3|half_adder:HA1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|example3|full_adder:inst3|half_adder:HA2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
