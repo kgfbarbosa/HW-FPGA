@@ -1,0 +1,14 @@
+|example2
+Q0 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+RESET => inst5.IN0
+CLOCK => inst3.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst4.CLK
+D => inst3.DATAIN
+SET => inst.IN0
+Q1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
