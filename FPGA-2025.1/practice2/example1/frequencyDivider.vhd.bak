@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity frequencyDivider is
+    Port (
+        clk   : in  STD_LOGIC;       -- Clock de 50 MHz
+        led   : out STD_LOGIC        -- Saída para LED
+    );
+end frequencyDivider;
+
+architecture Behavioral of frequencyDivider is
+    signal counter : INTEGER range 0 to 24_999_999 := 0;
+    signal led_exit : STD_LOGIC := '0';
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if counter = 24_999_999 then
+                counter <= 0;
+                saida_led <= not led_exit;
+            else
+                counter <= counter + 1;
+            end if;
+        end if;
+    end process;
+
+    led <= led_exit;
+end Behavioral;
