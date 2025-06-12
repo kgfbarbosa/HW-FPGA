@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 240 216 416 232)
+	(rect 192 248 368 264)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "pin_name1" (rect 9 0 62 12)(font "Arial" ))
 	(pt 176 8)

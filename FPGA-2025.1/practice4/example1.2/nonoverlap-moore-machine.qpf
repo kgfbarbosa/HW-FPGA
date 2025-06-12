@@ -18,13 +18,13 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 04:47:41  May 27, 2025
+# Date created = 23:40:51  June 11, 2025
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "04:47:41  May 27, 2025"
+DATE = "23:40:51  June 11, 2025"
 
 # Revisions
 
-PROJECT_REVISION = "example1"
+PROJECT_REVISION = "nonoverlap-moore-machine"
