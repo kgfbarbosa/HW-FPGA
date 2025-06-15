@@ -1,0 +1,76 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do top_module_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/klysm/Documents/practice5/example1/top_module.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_module
+# -- Compiling architecture structural of top_module
+# vcom -93 -work work {C:/Users/klysm/Documents/practice5/example1/clk_prescaler.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clk_prescaler
+# -- Compiling architecture behavioral of clk_prescaler
+# vcom -93 -work work {C:/Users/klysm/Documents/practice5/example1/sawtooth_generator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sawtooth_generator
+# -- Compiling architecture behavioral of sawtooth_generator
+# vcom -93 -work work {C:/Users/klysm/Documents/practice5/example1/pwm_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity pwm_controller
+# -- Compiling architecture behavioral of pwm_controller
+# 
+vsim work.top_module
+# vsim work.top_module 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_module(structural)
+# Loading work.clk_prescaler(behavioral)
+# Loading work.sawtooth_generator(behavioral)
+# Loading work.pwm_controller(behavioral)
+add wave -position end  sim:/top_module/btn_dec
+add wave -position end  sim:/top_module/btn_inc
+add wave -position end  sim:/top_module/clk
+add wave -position end  sim:/top_module/reset_n
+add wave -position end  sim:/top_module/dac_data
+add wave -position end  sim:/top_module/pwm_out
+add wave -position end  sim:/top_module/sawtooth_out
+force -freeze sim:/top_module/btn_dec 0 0
+force -freeze sim:/top_module/btn_inc 0 0
+force -freeze sim:/top_module/clk 0 0, 1 {10000 ps} -r 20ns
+force -freeze sim:/top_module/reset_n 0 0
+run
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /top_module/U3_PWM_CONTROLLER
+run
+run
+noforce sim:/top_module/pwm_out
+run
+force -freeze sim:/top_module/reset_n 1 0
+run
+run

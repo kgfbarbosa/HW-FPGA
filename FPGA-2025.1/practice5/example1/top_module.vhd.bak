@@ -1,0 +1,91 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity top_module is
+    port (
+        clk        : in  std_logic;  -- Clock de entrada (50 MHz do DE0-Nano)
+        reset_n    : in  std_logic;  -- Reset assíncrono ativo baixo
+        btn_inc    : in  std_logic;  -- Botão para incrementar a razão cíclica
+        btn_dec    : in  std_logic;  -- Botão para decrementar a razão cíclica
+        pwm_out    : out std_logic;  -- Saída do sinal PWM
+        dac_data   : out unsigned(7 downto 0) -- Saída para o seu conversor DA (8 bits)
+    );
+end entity top_module;
+
+architecture structural of top_module is
+
+    -- Sinais internos para conexão entre blocos
+    signal s_clk_sawtooth : std_logic;
+    signal s_sawtooth_val : unsigned(7 downto 0);
+    signal s_duty_cycle   : unsigned(7 downto 0);
+
+    -- Componentes
+    component clk_prescaler is
+        generic (
+            G_PRESCALER_VALUE : integer := 19
+        );
+        port (
+            clk_in  : in  std_logic;
+            reset_n : in  std_logic;
+            clk_out : out std_logic
+        );
+    end component clk_prescaler;
+
+    component sawtooth_generator is
+        port (
+            clk        : in  std_logic;
+            reset_n    : in  std_logic;
+            sawtooth_val : out unsigned(7 downto 0)
+        );
+    end component sawtooth_generator;
+
+    component pwm_controller is
+        port (
+            clk          : in  std_logic;
+            clk_sawtooth : in  std_logic;
+            reset_n      : in  std_logic;
+            btn_inc      : in  std_logic;
+            btn_dec      : in  std_logic;
+            sawtooth_val : in  unsigned(7 downto 0);
+            pwm_out      : out std_logic;
+            duty_cycle_out : out unsigned(7 downto 0)
+        );
+    end component pwm_controller;
+
+begin
+
+    -- Instanciação dos blocos
+    U1_CLK_PRESCALER : clk_prescaler
+    generic map (
+        G_PRESCALER_VALUE => 19
+    )
+    port map (
+        clk_in  => clk,
+        reset_n => reset_n,
+        clk_out => s_clk_sawtooth
+    );
+
+    U2_SAWTOOTH_GENERATOR : sawtooth_generator
+    port map (
+        clk        => s_clk_sawtooth,
+        reset_n    => reset_n,
+        sawtooth_val => s_sawtooth_val
+    );
+
+    U3_PWM_CONTROLLER : pwm_controller
+    port map (
+        clk          => clk,
+        clk_sawtooth => s_clk_sawtooth,
+        reset_n      => reset_n,
+        btn_inc      => btn_inc,
+        btn_dec      => btn_dec,
+        sawtooth_val => s_sawtooth_val,
+        pwm_out      => pwm_out,
+        duty_cycle_out => s_duty_cycle
+    );
+
+    -- Atribuição final da saída do duty cycle para o DAC
+    dac_data <= s_duty_cycle;
+
+end architecture structural;
