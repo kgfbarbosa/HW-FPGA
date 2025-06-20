@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity triangularwave is
+	port(
+		clk:in std_logic;
+      dacout:out std_logic_vector(7 downto 0)
+	);
+end triangularwave;
+
+architecture main of triangularwave is
+signal cout: std_logic_vector(7 downto 0):="00000000";
+signal temp: std_logic_vector(3 downto 0):="0000";
+
+begin
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			temp<= temp+1;
+		end if;
+	end process;
+	process(temp(3))
+	variable flag: std_logic:='0';
+	begin
+		if rising_edge(temp(3)) then
+		if flag='0' then
+			cout<=cout +1;
+		else 
+			cout<=cout-1;
+		end if;
+		if (cout="00000000" or cout="11111111") then
+			flag:= not flag;
+		end if;
+			dacout<=cout;
+		end if;
+	end process;
+end main;

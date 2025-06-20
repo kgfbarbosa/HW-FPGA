@@ -1,0 +1,153 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\klysm\Documents\practice5\example2\simulation\modelsim
+Eclk_prescaler
+Z1 w1749823431
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\klysm\Documents\practice5\example2\simulation\modelsim
+Z6 8C:/Users/klysm/Documents/practice5/example2/clk_prescaler.vhd
+Z7 FC:/Users/klysm/Documents/practice5/example2/clk_prescaler.vhd
+l0
+L5
+VVz6=JmUa5l=XO3=87L3zJ3
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1749825306.071000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/klysm/Documents/practice5/example2/clk_prescaler.vhd|
+Z11 !s107 C:/Users/klysm/Documents/practice5/example2/clk_prescaler.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 DOn2nhIBkgF;_?40e6o9n0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+DEx4 work 13 clk_prescaler 0 22 Vz6=JmUa5l=XO3=87L3zJ3
+l19
+L16
+VZMHXjNKRW5T8D9UU5:Ohh2
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 1QaI53lbJ[AE@>O`a8]2[2
+!i10b 1
+Epwm_controller
+Z14 w1749815848
+R2
+R3
+R4
+R5
+Z15 8C:/Users/klysm/Documents/practice5/example2/pwm_controller.vhd
+Z16 FC:/Users/klysm/Documents/practice5/example2/pwm_controller.vhd
+l0
+L5
+VQM<;bP@Igj?l`XfnP^gcV0
+R8
+31
+Z17 !s108 1749825306.213000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/klysm/Documents/practice5/example2/pwm_controller.vhd|
+Z19 !s107 C:/Users/klysm/Documents/practice5/example2/pwm_controller.vhd|
+R12
+R13
+!s100 bZh@iQ`;lGcRm_9kEDzZJ2
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+DEx4 work 14 pwm_controller 0 22 QM<;bP@Igj?l`XfnP^gcV0
+l27
+L18
+VBQI311lEfe=l:C[gGf29d3
+R8
+31
+R17
+R18
+R19
+R12
+R13
+!s100 LHUO;7dLGXLJl0<;oP9b[2
+!i10b 1
+Etop_module
+Z20 w1749822744
+R2
+R3
+R4
+R5
+Z21 8C:/Users/klysm/Documents/practice5/example2/top_module.vhd
+Z22 FC:/Users/klysm/Documents/practice5/example2/top_module.vhd
+l0
+L5
+VcOhF[zLP_azO8b14T>zCY0
+R8
+31
+Z23 !s108 1749825306.134000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/klysm/Documents/practice5/example2/top_module.vhd|
+Z25 !s107 C:/Users/klysm/Documents/practice5/example2/top_module.vhd|
+R12
+R13
+!s100 O7ZfR7QZ>hDS4ddJ8::YC2
+!i10b 1
+Astructural
+R2
+R3
+R4
+DEx4 work 10 top_module 0 22 cOhF[zLP_azO8b14T>zCY0
+l57
+L17
+VFAzNb2D@:>Bob:MBG84i;2
+R8
+31
+R23
+R24
+R25
+R12
+R13
+!s100 ;Q:Z_mmcJQGGV`>AIj=kz1
+!i10b 1
+Etriangular_generator
+Z26 w1749825279
+R2
+R3
+R4
+R5
+Z27 8C:/Users/klysm/Documents/practice5/example2/triangular_generator.vhd
+Z28 FC:/Users/klysm/Documents/practice5/example2/triangular_generator.vhd
+l0
+L5
+VzZa1^PP7U=DG5;gZeR[:h0
+!s100 lACGk9dU[ZGeSLW<JJVf@2
+R8
+31
+!i10b 1
+Z29 !s108 1749825306.277000
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/klysm/Documents/practice5/example2/triangular_generator.vhd|
+Z31 !s107 C:/Users/klysm/Documents/practice5/example2/triangular_generator.vhd|
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 20 triangular_generator 0 22 zZa1^PP7U=DG5;gZeR[:h0
+l18
+L13
+V7<cH3mI3]4dT9cNIZ0GJ;3
+!s100 <JEe3h6OIUgndA3f]JbHB0
+R8
+31
+!i10b 1
+R29
+R30
+R31
+R12
+R13

@@ -1,0 +1,117 @@
+|top_module
+clk => clk_prescaler:U1_CLK_PRESCALER.clk_in
+clk => pwm_controller:U3_PWM_CONTROLLER.clk
+reset_n => clk_prescaler:U1_CLK_PRESCALER.reset_n
+reset_n => triangular_generator:U2_TRIANGULAR_GENERATOR.reset_n
+reset_n => pwm_controller:U3_PWM_CONTROLLER.reset_n
+btn_inc => pwm_controller:U3_PWM_CONTROLLER.btn_inc
+btn_dec => pwm_controller:U3_PWM_CONTROLLER.btn_dec
+pwm_out <= pwm_controller:U3_PWM_CONTROLLER.pwm_out
+triangular_out[0] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[0]
+triangular_out[1] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[1]
+triangular_out[2] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[2]
+triangular_out[3] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[3]
+triangular_out[4] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[4]
+triangular_out[5] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[5]
+triangular_out[6] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[6]
+triangular_out[7] <= triangular_generator:U2_TRIANGULAR_GENERATOR.triangular_val[7]
+dac_data[0] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[0]
+dac_data[1] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[1]
+dac_data[2] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[2]
+dac_data[3] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[3]
+dac_data[4] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[4]
+dac_data[5] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[5]
+dac_data[6] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[6]
+dac_data[7] <= pwm_controller:U3_PWM_CONTROLLER.duty_cycle_out[7]
+
+
+|top_module|clk_prescaler:U1_CLK_PRESCALER
+clk_in => s_clk_out.CLK
+clk_in => s_counter[0].CLK
+clk_in => s_counter[1].CLK
+clk_in => s_counter[2].CLK
+clk_in => s_counter[3].CLK
+clk_in => s_counter[4].CLK
+reset_n => s_clk_out.ACLR
+reset_n => s_counter[0].ACLR
+reset_n => s_counter[1].ACLR
+reset_n => s_counter[2].ACLR
+reset_n => s_counter[3].ACLR
+reset_n => s_counter[4].ACLR
+clk_out <= s_clk_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|triangular_generator:U2_TRIANGULAR_GENERATOR
+clk => direction.CLK
+clk => s_triangular_counter[0].CLK
+clk => s_triangular_counter[1].CLK
+clk => s_triangular_counter[2].CLK
+clk => s_triangular_counter[3].CLK
+clk => s_triangular_counter[4].CLK
+clk => s_triangular_counter[5].CLK
+clk => s_triangular_counter[6].CLK
+clk => s_triangular_counter[7].CLK
+reset_n => direction.ACLR
+reset_n => s_triangular_counter[0].ACLR
+reset_n => s_triangular_counter[1].ACLR
+reset_n => s_triangular_counter[2].ACLR
+reset_n => s_triangular_counter[3].ACLR
+reset_n => s_triangular_counter[4].ACLR
+reset_n => s_triangular_counter[5].ACLR
+reset_n => s_triangular_counter[6].ACLR
+reset_n => s_triangular_counter[7].ACLR
+triangular_val[0] <= s_triangular_counter[0].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[1] <= s_triangular_counter[1].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[2] <= s_triangular_counter[2].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[3] <= s_triangular_counter[3].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[4] <= s_triangular_counter[4].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[5] <= s_triangular_counter[5].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[6] <= s_triangular_counter[6].DB_MAX_OUTPUT_PORT_TYPE
+triangular_val[7] <= s_triangular_counter[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|pwm_controller:U3_PWM_CONTROLLER
+clk => s_btn_dec_prev.CLK
+clk => s_btn_inc_prev.CLK
+clk => s_duty_cycle[0].CLK
+clk => s_duty_cycle[1].CLK
+clk => s_duty_cycle[2].CLK
+clk => s_duty_cycle[3].CLK
+clk => s_duty_cycle[4].CLK
+clk => s_duty_cycle[5].CLK
+clk => s_duty_cycle[6].CLK
+clk => s_duty_cycle[7].CLK
+clk_triangular => ~NO_FANOUT~
+reset_n => s_btn_dec_prev.PRESET
+reset_n => s_btn_inc_prev.PRESET
+reset_n => s_duty_cycle[0].ACLR
+reset_n => s_duty_cycle[1].ACLR
+reset_n => s_duty_cycle[2].ACLR
+reset_n => s_duty_cycle[3].ACLR
+reset_n => s_duty_cycle[4].ACLR
+reset_n => s_duty_cycle[5].ACLR
+reset_n => s_duty_cycle[6].ACLR
+reset_n => s_duty_cycle[7].PRESET
+btn_inc => s_btn_inc_prev.DATAIN
+btn_inc => process_1.IN1
+btn_dec => s_btn_dec_prev.DATAIN
+btn_dec => process_1.IN1
+triangular_val[0] => LessThan0.IN8
+triangular_val[1] => LessThan0.IN7
+triangular_val[2] => LessThan0.IN6
+triangular_val[3] => LessThan0.IN5
+triangular_val[4] => LessThan0.IN4
+triangular_val[5] => LessThan0.IN3
+triangular_val[6] => LessThan0.IN2
+triangular_val[7] => LessThan0.IN1
+pwm_out <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[0] <= s_duty_cycle[0].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[1] <= s_duty_cycle[1].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[2] <= s_duty_cycle[2].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[3] <= s_duty_cycle[3].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[4] <= s_duty_cycle[4].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[5] <= s_duty_cycle[5].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[6] <= s_duty_cycle[6].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle_out[7] <= s_duty_cycle[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
