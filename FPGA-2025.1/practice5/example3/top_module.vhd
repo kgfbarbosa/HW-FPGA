@@ -68,7 +68,7 @@ architecture structural of top_module is
         );
     end component;
 
-    component comparison_block
+    component pwm_comparator
         generic (
             DATA_WIDTH : natural := 8
         );
@@ -109,7 +109,7 @@ begin
         );
 
     -- Instances of the three comparison blocks (one for each phase)
-    comp_a_inst : comparison_block
+    comp_a_inst : pwm_comparator
         port map (
             carrier_in   => triangle_val,
             modulator_in => sine_a_val,
@@ -117,7 +117,7 @@ begin
             pwm_out_neg  => sa2_pwm
         );
 
-    comp_b_inst : comparison_block
+    comp_b_inst : pwm_comparator
         port map (
             carrier_in   => triangle_val,
             modulator_in => sine_b_val,
@@ -125,7 +125,7 @@ begin
             pwm_out_neg  => sb2_pwm
         );
 
-    comp_c_inst : comparison_block
+    comp_c_inst : pwm_comparator
         port map (
             carrier_in   => triangle_val,
             modulator_in => sine_c_val,

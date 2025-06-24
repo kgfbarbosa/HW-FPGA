@@ -1,0 +1,180 @@
+|top_module
+clk_50mhz => frequency_divider:freq_div_inst.clk_in
+rst_n => frequency_divider:freq_div_inst.rst_n
+rst_n => triangular_carrier:triangle_gen_inst.rst_n
+rst_n => sinusoidal_modulators:sine_gen_inst.rst_n
+sa1_pwm <= pwm_comparator:comp_a_inst.pwm_out_pos
+sa2_pwm <= pwm_comparator:comp_a_inst.pwm_out_neg
+sb1_pwm <= pwm_comparator:comp_b_inst.pwm_out_pos
+sb2_pwm <= pwm_comparator:comp_b_inst.pwm_out_neg
+sc1_pwm <= pwm_comparator:comp_c_inst.pwm_out_pos
+sc2_pwm <= pwm_comparator:comp_c_inst.pwm_out_neg
+
+
+|top_module|frequency_divider:freq_div_inst
+clk_in => toggle_reg.CLK
+clk_in => counter[0].CLK
+clk_in => counter[1].CLK
+clk_in => counter[2].CLK
+clk_in => counter[3].CLK
+clk_in => counter[4].CLK
+clk_in => counter[5].CLK
+rst_n => toggle_reg.ACLR
+rst_n => counter[0].ACLR
+rst_n => counter[1].ACLR
+rst_n => counter[2].ACLR
+rst_n => counter[3].ACLR
+rst_n => counter[4].ACLR
+rst_n => counter[5].ACLR
+clk_out <= toggle_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|triangular_carrier:triangle_gen_inst
+clk => direction.CLK
+clk => current_value[0].CLK
+clk => current_value[1].CLK
+clk => current_value[2].CLK
+clk => current_value[3].CLK
+clk => current_value[4].CLK
+clk => current_value[5].CLK
+clk => current_value[6].CLK
+clk => current_value[7].CLK
+rst_n => direction.ACLR
+rst_n => current_value[0].ACLR
+rst_n => current_value[1].ACLR
+rst_n => current_value[2].ACLR
+rst_n => current_value[3].ACLR
+rst_n => current_value[4].ACLR
+rst_n => current_value[5].ACLR
+rst_n => current_value[6].ACLR
+rst_n => current_value[7].ACLR
+triangle_out[0] <= current_value[0].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[1] <= current_value[1].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[2] <= current_value[2].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[3] <= current_value[3].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[4] <= current_value[4].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[5] <= current_value[5].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[6] <= current_value[6].DB_MAX_OUTPUT_PORT_TYPE
+triangle_out[7] <= current_value[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|sinusoidal_modulators:sine_gen_inst
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+rst_n => counter[0].ACLR
+rst_n => counter[1].ACLR
+rst_n => counter[2].ACLR
+rst_n => counter[3].ACLR
+rst_n => counter[4].ACLR
+rst_n => counter[5].ACLR
+rst_n => counter[6].ACLR
+rst_n => counter[7].ACLR
+rst_n => counter[8].ACLR
+rst_n => counter[9].ACLR
+rst_n => counter[10].ACLR
+rst_n => counter[11].ACLR
+rst_n => counter[12].ACLR
+rst_n => counter[13].ACLR
+rst_n => counter[14].ACLR
+sine_a_out[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+sine_a_out[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[0] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[1] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[2] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[3] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[4] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[5] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[6] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+sine_b_out[7] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[0] <= Mux23.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[1] <= Mux22.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[2] <= Mux21.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[3] <= Mux20.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[4] <= Mux19.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[5] <= Mux18.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[6] <= Mux17.DB_MAX_OUTPUT_PORT_TYPE
+sine_c_out[7] <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|pwm_comparator:comp_a_inst
+carrier_in[0] => LessThan0.IN8
+carrier_in[1] => LessThan0.IN7
+carrier_in[2] => LessThan0.IN6
+carrier_in[3] => LessThan0.IN5
+carrier_in[4] => LessThan0.IN4
+carrier_in[5] => LessThan0.IN3
+carrier_in[6] => LessThan0.IN2
+carrier_in[7] => LessThan0.IN1
+modulator_in[0] => LessThan0.IN16
+modulator_in[1] => LessThan0.IN15
+modulator_in[2] => LessThan0.IN14
+modulator_in[3] => LessThan0.IN13
+modulator_in[4] => LessThan0.IN12
+modulator_in[5] => LessThan0.IN11
+modulator_in[6] => LessThan0.IN10
+modulator_in[7] => LessThan0.IN9
+pwm_out_pos <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+pwm_out_neg <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|pwm_comparator:comp_b_inst
+carrier_in[0] => LessThan0.IN8
+carrier_in[1] => LessThan0.IN7
+carrier_in[2] => LessThan0.IN6
+carrier_in[3] => LessThan0.IN5
+carrier_in[4] => LessThan0.IN4
+carrier_in[5] => LessThan0.IN3
+carrier_in[6] => LessThan0.IN2
+carrier_in[7] => LessThan0.IN1
+modulator_in[0] => LessThan0.IN16
+modulator_in[1] => LessThan0.IN15
+modulator_in[2] => LessThan0.IN14
+modulator_in[3] => LessThan0.IN13
+modulator_in[4] => LessThan0.IN12
+modulator_in[5] => LessThan0.IN11
+modulator_in[6] => LessThan0.IN10
+modulator_in[7] => LessThan0.IN9
+pwm_out_pos <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+pwm_out_neg <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|pwm_comparator:comp_c_inst
+carrier_in[0] => LessThan0.IN8
+carrier_in[1] => LessThan0.IN7
+carrier_in[2] => LessThan0.IN6
+carrier_in[3] => LessThan0.IN5
+carrier_in[4] => LessThan0.IN4
+carrier_in[5] => LessThan0.IN3
+carrier_in[6] => LessThan0.IN2
+carrier_in[7] => LessThan0.IN1
+modulator_in[0] => LessThan0.IN16
+modulator_in[1] => LessThan0.IN15
+modulator_in[2] => LessThan0.IN14
+modulator_in[3] => LessThan0.IN13
+modulator_in[4] => LessThan0.IN12
+modulator_in[5] => LessThan0.IN11
+modulator_in[6] => LessThan0.IN10
+modulator_in[7] => LessThan0.IN9
+pwm_out_pos <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+pwm_out_neg <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+

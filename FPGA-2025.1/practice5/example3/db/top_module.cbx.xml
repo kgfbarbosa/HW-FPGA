@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="top_module">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top_module|sinusoidal_modulators:sine_gen_inst|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_com.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
