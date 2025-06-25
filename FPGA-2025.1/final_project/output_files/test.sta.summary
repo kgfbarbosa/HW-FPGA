@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -5.887
+TNS   : -31.101
+
+Type  : Slow 1200mV 85C Model Setup 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : -1.568
+TNS   : -13.651
+
+Type  : Slow 1200mV 85C Model Setup 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : -1.332
+TNS   : -9.469
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.125
+TNS   : -0.163
+
+Type  : Slow 1200mV 85C Model Hold 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : 0.592
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -18.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : -1.000
+TNS   : -9.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -5.177
+TNS   : -26.217
+
+Type  : Slow 1200mV 0C Model Setup 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : -1.305
+TNS   : -11.313
+
+Type  : Slow 1200mV 0C Model Setup 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : -1.043
+TNS   : -7.075
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.106
+TNS   : -0.141
+
+Type  : Slow 1200mV 0C Model Hold 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : 0.310
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : 0.534
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -18.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : -1.000
+TNS   : -9.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -2.871
+TNS   : -11.867
+
+Type  : Fast 1200mV 0C Model Setup 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : -0.433
+TNS   : -3.642
+
+Type  : Fast 1200mV 0C Model Setup 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : -0.347
+TNS   : -0.973
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : -0.104
+TNS   : -0.174
+
+Type  : Fast 1200mV 0C Model Hold 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -18.446
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sine_clock_divider:inst1|s_clk_out_internal'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'triangular_clock_divider:inst3|s_clk_out_internal'
+Slack : -1.000
+TNS   : -9.000
+
+------------------------------------------------------------
